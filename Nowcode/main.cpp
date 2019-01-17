@@ -1,7 +1,8 @@
 
 // #include "Offer/findArray/Solution.h"
 
-#include "Offer/replaceSpace.h"
+//对于不同的 题目使用不同的头文件初始化工程, 主函数主要做测试使用
+#include "Code/offer/02_replaceSpace/replaceSpace.h"
 
 using namespace std;
 
@@ -22,7 +23,6 @@ int main() {
     cout<<str1<<endl;
 
     s1.replaceSpace(str1,10);
-    //s1.replaceSpace2(str1,100);
 
     cout<<str1<<endl;
 

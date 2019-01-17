@@ -15,63 +15,51 @@ using namespace std;
 //////////////////////////////////////////////////////////////////////////////////////
 class Solution {
 public:
+
+    // 题目不知道怎么处理. 但是感觉问题很多, * 传递 指针不一致, length 没有说明是干什么用的
+
     void replaceSpace(char *str,int length) {
         if(str==NULL)
             return ;
 
-        string str1 ="";
         int countOfBlank=0;// 计数 空格数目
-        for(int i=0;i<strlen(str);i++)
+        int strlength = strlen(str);  // 字符串长度
+
+        for(int i=0;i<strlength;i++)
         {
             if(str[i]==' ')
                 countOfBlank ++;
         }
 
-        for(int i=0;i<20;i++ )
-            str[i] = 'A';
+        // 因为传递进来的是 *str 与原始地址不同, 但是指向的位置一致, 所以要改变指向位置的结果值
 
 
-        cout<<str<<endl;
+        char *pstr1 = str + strlength; //指向字符串最后面的 /0
+        char *pstr2 = str + strlength + countOfBlank * 2; // 每个空格的位置编程%20  
+                                                          // 多出来两倍的空格位置
 
-
-    }
-
-
-
-
-
-    void replaceSpace2(char *str,int length) {
-        if(str==NULL)
-            return ;
-        int CountOfBlanks=0;
-        int Originallength=0;
-        for(int i=0;str[i]!='\0';i++)
+        // 操作存在问题, 不能判断 字符串后面的值 内存存储的内容,直接改写会造成错误, 但是没有别的方法
+        while (pstr1 < pstr2)
         {
-            Originallength++;
-            if(str[i]==' ')
-                ++CountOfBlanks;
-        }
-        int len =Originallength+2*CountOfBlanks;
-        if(len+1>length)
-            return ;
-
-        char*pStr1=str+Originallength;//复制结束符‘\0’
-        char*pStr2=str+len;
-        while(pStr1<pStr2)
-        {
-            if(*pStr1==' ')
+            if (*pstr1 == ' ')
             {
-                *pStr2--='0';
-                *pStr2--='2';
-                *pStr2--='%';
+                *pstr2-- = '0';
+                *pstr2-- = '2';
+                *pstr2-- = '%';
             }
             else
             {
-                *pStr2--=*pStr1;
+                *pstr2-- = *pstr1;
             }
-            --pStr1;
+            --pstr1;
         }
+        //cout<<str<<endl;
+
+
     }
+
+
+
 };
 ////////////////////////////////////////////////////////////////////////
 

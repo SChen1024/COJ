@@ -19,4 +19,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\offer\02_replaceSpace\replaceSpace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\offer\01_findArray\findArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\offer\03_backList\backList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
