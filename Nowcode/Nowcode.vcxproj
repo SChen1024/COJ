@@ -25,6 +25,7 @@
     <ClInclude Include="Code\offer\01_findArray\findArray.h" />
     <ClInclude Include="Code\offer\02_replaceSpace\replaceSpace.h" />
     <ClInclude Include="Code\offer\03_backList\backList.h" />
+    <ClInclude Include="Code\offer\04_rebuildBinTree\rebuildBinTree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3F6EE800-4EEF-4BD5-85CF-FE8FC307BE4E}</ProjectGuid>
