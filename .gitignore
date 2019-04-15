@@ -240,8 +240,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-.vscode/
 tmp/cmake-build-debug/
 tmp/
 LL/cmake-build-debug/
 .idea/
+
+# 忽略生成文件选项
+*.exe 

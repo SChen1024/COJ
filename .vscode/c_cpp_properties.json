@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "x64",
+            "includePath": [
+                "F:/Fxxk/VS2015/VC/include*",
+                "F:/Fxxk/VS2015/VC/atlmfc/include/*",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                "${workspaceRoot}",
+                "${workspaceFolder}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "F:/Fxxk/VS2015/VC/include*",
+                    "F:/Fxxk/VS2015/VC/atlmfc/include/*",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                    "${workspaceRoot}",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "compilerPath": "F:/Fxxk/VS2015/VC/bin/cl.exe"
+        }
+    ],
+    "version": 4
+}

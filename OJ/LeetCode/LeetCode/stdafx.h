@@ -10,6 +10,29 @@
 #include <stdio.h>
 #include <tchar.h>
 
+// 包含必须的 头文件
+
+#include <iostream>
+
+#include <string>
+#include <vector>
+#include <fstream>
+#include <istream>
+#include <ios>
+#include <ostream>
+#include <iomanip>
+#include <streambuf>
+#include <string>
+#include <iosfwd>
 
 
-// TODO:  在此处引用程序需要的其他头文件
+#include <unordered_map>
+#include <list>
+#include <algorithm>
+
+using namespace std;
+
+
+// 加入需要使用的Solution 文件
+
+// #include "Code/LeetCode/01_TwoSum.h"

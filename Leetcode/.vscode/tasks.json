@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++.exe build active file",
+      "command": "F:\\Code\\MinGW\\msys\\1.0\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "F:\\Code\\MinGW\\msys\\1.0\\bin"
+      }
+    }
+  ],
+  "version": "2.0.0"
+}
