@@ -34,7 +34,20 @@
 			"xmemory0": "cpp",
 			"xstddef": "cpp",
 			"xstring": "cpp",
-			"xtr1common": "cpp"
+			"xtr1common": "cpp",
+			"array": "cpp",
+			"*.tcc": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"fstream": "cpp",
+			"optional": "cpp",
+			"sstream": "cpp",
+			"string_view": "cpp",
+			"tuple": "cpp"
 		},
 	// 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
 	"code-runner.runInTerminal": true,

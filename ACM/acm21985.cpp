@@ -4,7 +4,10 @@ using namespace std;
 int main(void)
 {
 
-    cout << "hello nowcoder" << endl;
+        int i=0;
+        cin>>i;
 
+        cout<<i<<endl;
+    
     return 0;
 }
