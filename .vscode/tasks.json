@@ -1,51 +1,27 @@
 {
     "version": "2.0.0",
-    "label": "buildCPP",
-    "command": "g++",
-    "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${file}.exe",
-        "-g", // 生成和调试有关的信息
-        "-Wall", // 开启额外警告
-        "-static-libgcc", // 静态链接
-
-
-    ], // 编译命令参数
-    "problemMatcher": {
-        "owner": "cpp",
-        "fileLocation": [
-            "relative",
-            "${workspaceRoot}"
-        ],
-        "presentation": {
-            "echo": true,
-            "reveal": "always", // 在“终端”中显示编译信息的策略，可以为always，silent，never。具体参见VSC的文档
-            "focus": false, // 设为true后可以使执行task时焦点聚集在终端，但对编译c和c++来说，设为true没有意义
-            "panel": "shared" // 不同的文件的编译信息共享一个终端面板
-        },
-      
-        
-        "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-        }
-       
-
-    },
-    "group": {
-        "kind": "build",
-        "isDefault": true
-    },
     "tasks": [
         {
             "type": "shell",
-            "label": "gcc.exe build active file",
+            "label": "g++_x64",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "gcc.exe x64",
             "command": "F:\\Code\\MinGW\\bin\\gcc.exe",
             "args": [
                 "-g",
@@ -54,24 +30,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "F:\\Code\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
-        },
-        {
-            "type": "shell",
-            "label": "g++",
-            "command": "F:\\Code\\MinGW\\msys\\1.0\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "F:\\Code\\MinGW\\msys\\1.0\\bin"
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"

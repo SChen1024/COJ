@@ -12,7 +12,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${file}.exe",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -20,7 +20,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "F:\\Code\\MinGW\\bin\\gdb.exe",
-            "preLaunchTask": "g++" ,// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
+            "preLaunchTask": "g++_x64" ,// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -40,9 +40,9 @@
             "stopAtEntry": false, // 设为true时程序将暂停在程序入口处，一般设置为false
             "cwd": "${fileDirname}", // 调试程序时的工作目录，一般为${workspaceRoot}即代码所在目录
             "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台
-            "preLaunchTask": "g++" ,// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
+            "preLaunchTask": "g++_x64" ,// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
             "debugOptions": [
-                "RedirectOutput"
+                // "RedirectOutput"
             ]
         }
     ]

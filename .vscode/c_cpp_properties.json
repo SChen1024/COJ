@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "x64",
+            "name": "gcc_x64",
             "includePath": [
                 "F:/Fxxk/VS2015/VC/include*",
                 "F:/Fxxk/VS2015/VC/atlmfc/include/*",
@@ -19,7 +19,7 @@
                 "_DEBUG",
                 "UNICODE"
             ],
-            "intelliSenseMode": "msvc-x64",
+            "intelliSenseMode": "gcc-x64",
             "browse": {
                 "path": [
                     "F:/Fxxk/VS2015/VC/include*",
@@ -39,8 +39,8 @@
                 "databaseFilename": ""
             },
             "cStandard": "c11",
-            "cppStandard": "c++17",
-            "compilerPath": "F:/Fxxk/VS2015/VC/bin/cl.exe"
+            "cppStandard": "c++11",
+            "compilerPath": "F:/Code/MinGW/bin/g++.exe"
         }
     ],
     "version": 4
