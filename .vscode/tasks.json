@@ -21,7 +21,7 @@
         },
         {
             "type": "shell",
-            "label": "gcc.exe x64",
+            "label": "gcc_x64",
             "command": "F:\\Code\\MinGW\\bin\\gcc.exe",
             "args": [
                 "-g",
