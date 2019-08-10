@@ -247,3 +247,8 @@ LL/cmake-build-debug/
 
 # 忽略生成文件选项
 *.exe 
+NowCoder/Offer/CodingInterviewChinese2/*
+NowCoder/CodingInterviews/*
+
+NowCoder/Offer/CodingInterviews/*
+NowCoder/Porject/code1/

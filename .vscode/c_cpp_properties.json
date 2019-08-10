@@ -1,37 +1,46 @@
 {
     "configurations": [
         {
-            "name": "x64",
+            "name": "gcc_x64",
             "includePath": [
                 "F:/Fxxk/VS2015/VC/include*",
                 "F:/Fxxk/VS2015/VC/atlmfc/include/*",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10586.0/um/x64",
+                "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10240.0/um/x64",
+                "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.17134.0/um/x64",
                 "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
                 "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                "C:/Windows/System32",
                 "${workspaceRoot}",
-                "${workspaceFolder}"
+                "${workspaceFolder}",
+                "F:/Code/MinGW/include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE"
             ],
-            "intelliSenseMode": "msvc-x64",
+            "intelliSenseMode": "gcc-x64",
             "browse": {
                 "path": [
                     "F:/Fxxk/VS2015/VC/include*",
                     "F:/Fxxk/VS2015/VC/atlmfc/include/*",
                     "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10586.0/um/x64",
+                    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10240.0/um/x64",
+                    "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.17134.0/um/x64",
                     "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
                     "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
                     "${workspaceRoot}",
-                    "${workspaceFolder}"
+                    "${workspaceFolder}",
+                    "F:/Code/MinGW/include",
+                    "C:/Windows/System32"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             },
             "cStandard": "c11",
-            "cppStandard": "c++17",
-            "compilerPath": "F:/Fxxk/VS2015/VC/bin/cl.exe"
+            "cppStandard": "c++11",
+            "compilerPath": "F:/Code/MinGW/bin/g++.exe"
         }
     ],
     "version": 4
