@@ -5,11 +5,10 @@
 #include <vector>
 #include <queue>
 #include <limits.h>
+#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 
-// 定义本地
-#define LOCAL_ 1
 
 typedef vector<int>             Vint;
 typedef vector<string>          Vstr;
@@ -24,7 +23,7 @@ std::string CoutVec(const T& vec,int flg =0)
     std::string str="";
     for(int i=0;i<vec.size();i++)
     {
-        str += to_string(vec[i])  +", ";
+        str = to_string(vec[i]), +", ";
     }
 
     // 默认不输出 换行
@@ -37,7 +36,7 @@ std::string CoutVec(const T& vec,int flg =0)
 
 // 二维数组输出
 template <typename T>
-std::string CoutVec2(const T& vec,int flg =1)
+std::string CoutVec2(const T& vec,int flg =0)
 {
     std::string str="";
     for(int i=0;i<vec.size();i++)
@@ -48,45 +47,49 @@ std::string CoutVec2(const T& vec,int flg =1)
 }
 
 
+
+// 定义本地
+#define LOCAL_ 1
 /*****************************************************************/
 
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
 
-string testRef(string src_str)
-{
-    for(int i=0;i<src_str.size();i++)
-    {
-        // this += src_str[i];
-    }
-
-    return src_str;
-
-}
 
 int main(void)
 {
-    int n = 10;
+    int N =0,K=0;
 
 
-    string str = to_string(n);
+#if LOCAL_
+    N = 2,K = 7;
+#else
+    cin>>N>>K;
+#endif
 
-    while(str.size() < 5)
+    vector<vector<int>> vec(N,vector<int>(6,0));
+
+#if LOCAL_
+    vec[0] = {1,2,3,4,5,6},vec[1] = {1,2,3,4,5,6};
+#else
+    for(int i=0;i<N;i++)
     {
-        str = "0" + str;
-        cout<<str<<":"<<str.size()<<endl;
+        for(int j=0;j<6;j++)
+            cin>>vec[i][j];
     }
+#endif
 
-    str += "\n\n 123";
+    // 暴力尝试 破解
+    vector<int> sum(1400,0);
 
-    cout<<str<<endl;
-
+    vector<vector<int>> dp(N*6,vector<int>(6,0));
     
+    while
 
 
-    
+
+
+
+
+
+
     return 0;
 }
-

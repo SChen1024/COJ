@@ -24,7 +24,7 @@ std::string CoutVec(const T& vec,int flg =0)
     std::string str="";
     for(int i=0;i<vec.size();i++)
     {
-        str += to_string(vec[i])  +", ";
+        str += to_string(vec[i]) +", ";
     }
 
     // 默认不输出 换行
@@ -50,43 +50,60 @@ std::string CoutVec2(const T& vec,int flg =1)
 
 /*****************************************************************/
 
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
 
-string testRef(string src_str)
-{
-    for(int i=0;i<src_str.size();i++)
-    {
-        // this += src_str[i];
-    }
+/*
+Problem Description
+有一张 nn 个点的完全无向图，点的标号是 1...n1...n，其中边 (i,j)(i,j) 的长度是 ixorji xor j，现在你需要求出点 11 到点 nn 的最短路的长度。
 
-    return src_str;
+Input
+第一行一个正整数 TT 表示数据组数 1\leq T\leq 1001≤T≤100
 
-}
+对于每组数据：第一行一个正整数 nn 表示点数 (2\leq n\leq 10^5)(2≤n≤10
+​5
+​​ )
+
+Output
+输出 TT 行，每行一个整数表示点 11 到点 nn 的最短路
+
+Sample Input
+1
+3
+Sample Output
+Copy
+2
+
+*/
+#define MAX_  10
 
 int main(void)
 {
-    int n = 10;
+    int T = 0;
+    cin>>T;
 
 
-    string str = to_string(n);
+    // 构造邻接表 输出
+    vector<vector<int>> vec(MAX_+1,vector<int>(MAX_+1,0));
 
-    while(str.size() < 5)
+    for(int i=1;i<vec.size();i++)
+        for(int j=1;j<i;j++)
+            vec[i][j] = (i^j);
+
+
+
+// cout<<CoutVec2(vec,1);
+    
+
+    for(int i=0;i<T;i++)
     {
-        str = "0" + str;
-        cout<<str<<":"<<str.size()<<endl;
+        int n = 0;
+        cin >> n;
+
+        cout<<vec[n][1]<<endl;
+
     }
 
-    str += "\n\n 123";
-
-    cout<<str<<endl;
-
-    
 
 
-    
+
     return 0;
 }
-

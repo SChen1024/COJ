@@ -24,7 +24,7 @@ std::string CoutVec(const T& vec,int flg =0)
     std::string str="";
     for(int i=0;i<vec.size();i++)
     {
-        str += to_string(vec[i])  +", ";
+        str = to_string(vec[i]), +", ";
     }
 
     // 默认不输出 换行
@@ -37,7 +37,7 @@ std::string CoutVec(const T& vec,int flg =0)
 
 // 二维数组输出
 template <typename T>
-std::string CoutVec2(const T& vec,int flg =1)
+std::string CoutVec2(const T& vec,int flg =0)
 {
     std::string str="";
     for(int i=0;i<vec.size();i++)
@@ -50,43 +50,14 @@ std::string CoutVec2(const T& vec,int flg =1)
 
 /*****************************************************************/
 
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
 
-string testRef(string src_str)
-{
-    for(int i=0;i<src_str.size();i++)
-    {
-        // this += src_str[i];
-    }
 
-    return src_str;
-
-}
+// 学习DP  入门内容
+// [参考链接](https://blog.csdn.net/u013309870/article/details/75193592)
 
 int main(void)
 {
-    int n = 10;
 
 
-    string str = to_string(n);
-
-    while(str.size() < 5)
-    {
-        str = "0" + str;
-        cout<<str<<":"<<str.size()<<endl;
-    }
-
-    str += "\n\n 123";
-
-    cout<<str<<endl;
-
-    
-
-
-    
     return 0;
 }
-
