@@ -83,8 +83,8 @@ int main(void)
 
     cout<<str<<endl;
 
-    
-
+    cout<<sizeof(void*)<<endl;
+    cout<<sizeof(void)<<endl;
 
     
     return 0;
