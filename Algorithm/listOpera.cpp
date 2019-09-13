@@ -1,6 +1,6 @@
 // 链表操作类的 测试
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 // 定义链表节点 值和指针
@@ -69,7 +69,7 @@ bool DeleteNode(ListNode *head, int data)
 
         p = p->next;
     }    
-
+    return true;
 }
 
 // 查找节点 // 根据值 查找节点
@@ -146,7 +146,7 @@ int FindIndexByIndex(ListNode *head, int index)
     if(index ==0)
         return head->val;
     if(index <0)
-        return NULL;
+        return -1;
 
     // 返回 节点值等于 输入值的第一个节点
     ListNode *p = head;
@@ -163,7 +163,7 @@ int FindIndexByIndex(ListNode *head, int index)
     }
 
     // 如果找不到 返回 NULL
-    return NULL;
+    return -1;
     
 }
 
@@ -248,6 +248,35 @@ ListNode * ReverseList_re(ListNode * head)
     return new_head;
 }
 
+// 获取 链表的中点 // 使用快慢指针
+ListNode* findMiddle(ListNode * head)
+{
+    if(head == nullptr || head->next == nullptr)
+        return head;
+    ListNode *slow = head, *fast = head;
+    while(fast->next && fast->next->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    return slow->next;
+}
+// 判断两个链表是否相等  // 2短一点的话 提前结束
+bool cmpList(ListNode* list1,ListNode* list2)
+{
+    while(list1 && list2)
+    {
+        if(list1->val != list2->val)
+            return false;
+        list1 = list1->next;
+        list2 = list2->next;
+    }
+
+
+    return  (list1==nullptr) || (list2==nullptr);
+}
+
 
 // 主函数 测试 demo 
 #define LENGTH 20 
@@ -255,10 +284,22 @@ int main(void)
 {
     ListNode *head  = nullptr;
 
+#if 0 
+    cout<<"Create Rnd List"<<endl;
     // 生成随机链表
     for(int i=0;i<LENGTH;++i)
         AddNode(head,i,rand()%LENGTH);  // 相应的节点 插入随机值
     PrintList(head);
+#else
+    cout<<"Create vector List"<<endl;
+    vector<int> vec = {0,1,1,2,2,1,1,0};
+    // 生成随机链表
+    for(int i=0;i<vec.size();++i)
+        AddNode(head,i,vec[i]);  // 相应的节点 插入随机值
+    PrintList(head);
+
+#endif 
+
 
     // 反转链表 并输出
     head = ReverseList(head);
@@ -271,6 +312,15 @@ int main(void)
     // 反转链表 并输出 递归实现
     head = ReverseList_re(head);
     PrintList(head);
+
+
+    //找到中点
+    ListNode *mid = findMiddle(head);
+    PrintList(mid);
+    mid = ReverseList(mid);
+    PrintList(mid);
+
+    cout<<cmpList(head,mid)<<endl;
 
     // system("pause");
     return 0;

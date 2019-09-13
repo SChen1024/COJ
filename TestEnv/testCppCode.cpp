@@ -122,14 +122,20 @@ int str2int(string &str)
 
 
 /*****************************************************************/
-
+char *get()
+{
+    char data[16] = "hello world";
+    return data;
+}
 
 
 int main(void)
 {
     int n = 10;
 
+    char *p = get();
 
+    printf("%s",p);
 
 
 
