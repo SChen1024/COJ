@@ -50,27 +50,115 @@ std::string CoutVec2(const T& vec,int flg =1)
 
 /*****************************************************************/
 
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
-
-string testRef(string src_str)
+char * find_lonest_num_str(char* input)
 {
-    for(int i=0;i<src_str.size();i++)
+    int max_cnt,cnt;
+    char* max_num_char;
+
+    // 初始化
+    max_cnt = 0;
+    cnt = 0;
+    max_num_char = input;
+    while(input)
     {
-        // this += src_str[i];
+        // 如果数字 累加 否则 终止
+        if(*input >='0' && *input <= '9')
+        {
+            cnt ++;
+        }
+        else
+        {
+            if(cnt > max_cnt)
+            {
+                max_cnt = cnt;
+                max_num_char = input;
+            }
+            cnt = 0;
+        }
+
+        input ++;
+    }
+    return max_num_char;
+}
+
+class C
+{
+    private:
+        int b;
+        int *p;
+    public:
+        virtual void funcb()
+        {
+            cout<<"b:funcb"<<endl;
+        }
+        void funca()
+        {
+            cout<<"a"<<endl;
+        }
+
+        C()
+        {
+            cout<<"C"<<endl;
+        }
+};
+
+class Solution2
+{
+
+public:
+    long long  jumpFloor(long long n)
+    {
+        if(n <= 2)
+        {
+            return n;
+        }
+        long long one = 1;
+        long long two = 2;
+        long long res = 0;
+
+        for(long long i = 3; i <= n; i++)
+        {
+            res = one + two;
+
+            one = two;
+            two = res;
+        }
+
+        return res;
     }
 
-    return src_str;
+};
 
+// 计算阶乘
+int fun(int n)
+{
+    const int MOD = 1000003;
+    if(n>MOD)
+        return 0;
+    
+    int res= 1;
+    for(int i=1;i<=n;i++)
+    {
+        res  = (res*i)%MOD;
+    }
+
+    return res;
 }
+
+// 计算 三个数的三次方和为42 
 
 int main(void)
 {
-    int n = 10;
+    C cc;
+    cout<<sizeof(cc)<<endl;
 
+    // long long N = 10000000L;
 
+    // Solution2 s2;
+    // long long res = s2.jumpFloor(N);
+    // cout<<res<<endl;
+
+    /*
     string str = to_string(n);
 
     while(str.size() < 5)
@@ -85,7 +173,12 @@ int main(void)
 
     cout<<sizeof(void*)<<endl;
     cout<<sizeof(void)<<endl;
+    
+    // char test[] = "abc360360xyz123you";
+   // char * chh = find_lonest_num_str(test);
 
+    cout<<string(chh)<<endl;
+    */
     
     return 0;
 }

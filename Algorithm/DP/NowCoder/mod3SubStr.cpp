@@ -1,3 +1,12 @@
+/*
+    1. 被 3 整除的子序列个数
+    2. 使用 dp  
+    
+    例如 132  == 3 
+
+
+*/
+
 /*****************************************************************/
 // 包含必须的头文件
 
@@ -24,7 +33,7 @@ std::string CoutVec(const T& vec,int flg =0)
     std::string str="";
     for(int i=0;i<vec.size();i++)
     {
-        str = to_string(vec[i]), +", ";
+        str += to_string(vec[i])  +", ";
     }
 
     // 默认不输出 换行
@@ -37,7 +46,7 @@ std::string CoutVec(const T& vec,int flg =0)
 
 // 二维数组输出
 template <typename T>
-std::string CoutVec2(const T& vec,int flg =0)
+std::string CoutVec2(const T& vec,int flg =1)
 {
     std::string str="";
     for(int i=0;i<vec.size();i++)
@@ -50,13 +59,9 @@ std::string CoutVec2(const T& vec,int flg =0)
 
 /*****************************************************************/
 
-
-
-// 学习DP  入门内容
-// [参考链接](https://blog.csdn.net/u013309870/article/details/75193592)
-
 int main(void)
 {
+
 
 
     return 0;
