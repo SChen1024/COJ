@@ -81,6 +81,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "D:\\Code\\Project\\OpenCV_doc"
 		}
 	],
 
