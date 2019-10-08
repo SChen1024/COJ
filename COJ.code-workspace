@@ -52,7 +52,8 @@
 			"regex": "cpp",
 			"valarray": "cpp",
 			"memory": "cpp",
-			"complex": "cpp"
+			"complex": "cpp",
+			"queue": "cpp"
 		},
 	// 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
 	"code-runner.runInTerminal": true,
@@ -87,6 +88,12 @@
 		},
 		{
 			"path": "D:\\Code\\Project\\FindJobd2020"
+		},
+		{
+			"path": "D:\\Data\\Project\\STL"
+		},
+		{
+			"path": "D:\\Code\\Vision\\Camera\\Project\\CBoreHole"
 		}
 	],
 
