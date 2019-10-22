@@ -28,14 +28,6 @@ inline ll read(){
 	return x*f;
 }
 
-inline int readin()
-{
-    int x=0,f=1;char ch=getchar();
-    while(ch<'0'||ch>'9'){if(ch=='-')f=-1;ch=getchar();}
-    while(ch>='0'&&ch<='9'){x=x*10+ch-'0';ch=getchar();}
-    return x*f;
-}
-
 // 将 ll 值输出
 inline void write(ll x){
 	if(x<0) putchar('-'),x=-x;
@@ -57,15 +49,29 @@ void print(int x,char ch)
 }
 
 // *****************************************************************
+// 检测是否大于0 且为偶数
+bool check(int n) {
+    return (n>0) && (n%2 == 0);
+}
+
 // 计算所有的数字
-bool solve(ll x,ll y) {
-
-    if(x-y<=1) {
-        return false;
+bool solve(int A,int B,int C) {
+    if(check(C)){
+        if(check(B))
+            if(check(A))
+                return true;
+        else
+            if(check(A-2))
+                return true;
+    } else {
+        if(check(B-1))
+            if(check(A-1))
+                return true;
+        else
+            if(check(A-3))
+                return true;
     }
-
-
-    return true;
+    return false;
 }
 
 
@@ -73,20 +79,19 @@ bool solve(ll x,ll y) {
 int main(void)
 {   
     // 使用in.txt 重定向 到输入
-    // freopen("in.txt","r",stdin);
+    freopen("in.txt","r",stdin);
 
     int T= 0;
     cin >> T;
 
     for(int i=1;i<=T;i++) {
-        long long  x=0,y=0;
-        cin >> x >> y;
-        // cout<<i<<"/"<<T<<"\tx:"<<x<<"\ty:"<<y<<"\t";
-        if(solve(x,y)) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
-        }
+        int A,B,C;
+        cin>>A>>B>>C;
+
+        if(solve(A,B,C))
+            cout<<"YES"<<endl;
+        else 
+            cout<<"NO"<<endl;
     }
     return 0;
 }

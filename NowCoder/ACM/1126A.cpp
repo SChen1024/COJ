@@ -1,3 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <limits.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+// 定义 位置 方向 结构体
+struct Boy {
+    int local;    // 初始位置
+    int dir;    // 行进方向 0-- 左  1--右 
+
+    // 初始化构造函数
+    Boy(int l=0,int d=1) {
+        local = l;
+        dir = d;
+    }
+};
+    
 /*
     ACM template 
 */
@@ -69,6 +88,7 @@ bool solve(ll x,ll y) {
 }
 
 
+
 // 主函数运行
 int main(void)
 {   
@@ -81,12 +101,7 @@ int main(void)
     for(int i=1;i<=T;i++) {
         long long  x=0,y=0;
         cin >> x >> y;
-        // cout<<i<<"/"<<T<<"\tx:"<<x<<"\ty:"<<y<<"\t";
-        if(solve(x,y)) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
-        }
+        
     }
     return 0;
 }
