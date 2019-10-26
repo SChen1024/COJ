@@ -53,7 +53,9 @@
 			"valarray": "cpp",
 			"memory": "cpp",
 			"complex": "cpp",
-			"queue": "cpp"
+			"queue": "cpp",
+			"fcntl.h": "c",
+			"io.h": "c"
 		},
 	// 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
 	"code-runner.runInTerminal": true,

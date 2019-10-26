@@ -66,25 +66,60 @@ std::string CoutVec(const T& vec,int flg =0)
     return str;
 }
 
-
+#if 1
 /*****************************************************************/
+// 判断是够质数 6倍附近判断 质数
+bool IsPrime(int num) {
+    if(num <= 1) {
+        return false;
+    }
+    if(num == 2 || num ==3) {
+        return true;
+    }
+    // 处理 不靠近6的数据
+    if(num %6 != 1 && num %6 != 5) {
+        return false;
+    }
+    for(int i=5;i<sqrt(num)+1;i += 6) {
+        if(num %i == 0 || num %(i+2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
 // 计算质数表
 const int MAX = 30000000;
-int solve(vector<int> &count)
+const int MOD = 1000000007;
+
+//  计算小于
+void solve(vector<int> &count)
 {
-    for(int i=2;i*i<= MAX;i++)
+    int n = count.size();
+    for(int i=2;i<= n;i++)
     {
-        // 是质数
-        if(count[i] == 0)
+        int tmp = 0;
+        // 没被访问过 且是质数
+        if(count[i] == 0 && IsPrime(i))
         {
-            for(int j=2*i;j<MAX; j++)
+            for(int j=2*i;j<=n; j += i)
             {
-                count[j] ++;
+                if(count[j] == 0)
+                {
+                    count[j]  = i;
+                }
+
             }
-            count[i] = 1;
+            count[i] = i;
         }
     }
 }
+
+
+// 计算从 x 到 n 的有多少个 x 的倍数
+int solve(vector<int> &vec, int x);
 
 int main(void)
 {   
@@ -94,17 +129,75 @@ int main(void)
     freopen("in.txt","r",stdin);
     cin>>n;
 
-    vector<int> count(n);
+    vector<int> count(n+1,0); 
 
     solve(count);
 
-    int res = 0;
-    for(int i=1;i<=n;i++)
+    long long  res = 0;
+    for(int i=2;i<=n;i++)
     {
-        res += count[i];
+        res = (res + count[i])%MOD;
     }
+
+    cout<<CoutVec(count)<<endl;
 
     cout<<res<<endl;
 
     return 0;
 }
+
+#endif
+
+#if 0
+
+#include<cstdio>
+#include<cstring>
+#include<vector>
+using namespace std;
+
+vector<int> prime;
+void init() {
+	prime.push_back(2);
+	for (int i = 3;i <= 10000;i+=2) {
+		bool flag = true;
+		for (int j = 0;j < prime.size();j++) {
+			if (i % prime[j] == 0) {
+				flag = false;
+				break;
+			}
+		}
+		if (flag) {
+			prime.push_back(i);
+		}
+	}
+}
+
+int cal(int n, int idx) {
+	if (n <= 1) {
+		return 0;
+	}
+	int ret = n / prime[idx];
+	for (int i = 0;i < idx;i++) {
+		if (n < prime[i] * prime[i]) {
+			break;
+		}
+		ret -= cal(n / prime[idx], i);
+	}
+	return ret;
+}
+
+int main() {
+	init();
+	int n = 4;
+
+	int ret = 0;
+	for (int i = 0;prime[i] * prime[i] <= n;i++) {
+		ret += (cal(n, i) - 1) * prime[i];
+	}
+	printf("%d\n", ret);
+
+    cout<<CoutVec(prime)<<endl;
+
+	return 0;
+}
+#endif 
