@@ -79,6 +79,12 @@
 	// 在运行代码之前保存文件
 	"code-runner.saveFileBeforeRun": true,
 	"code-runner.clearPreviousOutput": true,
+	"latex-workshop.view.pdf.external.viewer.command": "F:/Code/Latex/PDF/SumatraPDF.exe",
+	"latex-workshop.view.pdf.external.viewer.args": [
+		"-inverse-search",
+		"\"C:/Program Files/Microsoft VS Code/code.exe\" -g \"%f:%l\"",
+		"%PDF%"
+	],
 
 	},
 	"folders": [
@@ -89,9 +95,6 @@
 			"path": "D:\\Code\\Project\\OpenCV_doc"
 		},
 		{
-			"path": "D:\\Code\\Project\\FindJobd2020"
-		},
-		{
 			"path": "D:\\Code\\Vision\\Camera\\Project\\CBoreHole"
 		},
 		{
@@ -99,6 +102,9 @@
 		},
 		{
 			"path": "D:\\Data\\Project"
+		},
+		{
+			"path": "D:\\Code\\Latex"
 		}
 	],
 
