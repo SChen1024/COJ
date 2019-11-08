@@ -76,6 +76,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "D:\\Code\\Vision\\xxCamera"
 		}
 	],
 
