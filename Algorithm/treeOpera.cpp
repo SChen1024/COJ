@@ -68,4 +68,39 @@ public:
         return root;
         
     }
+
+    // 先序遍历
+    void preOrder(TreeNode* root,vector<int> &vec)
+    {
+        if(root)
+        {
+            vec.push_back(root->val);
+            preOrder(root->left, vec);
+            preOrder(root->right,vec);
+        }
+    }
+
+    // 中序遍历
+    void inOrder(TreeNode* root,vector<int> &vec)
+    {
+        if(root)
+        {
+            inOrder(root->left, vec);
+            vec.push_back(root->val);
+            inOrder(root->right,vec);
+        }
+    }
+
+    // 后序遍历
+    void postOrder(TreeNode* root,vector<int> &vec)
+    {
+        if(root)
+        {
+            postOrder(root->left, vec);
+            postOrder(root->right,vec);
+            vec.push_back(root->val);
+        }
+    }
+
+
 };

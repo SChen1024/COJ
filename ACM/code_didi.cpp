@@ -46,20 +46,7 @@ std::string CoutVec2(const T& vec,int flg =1)
     }
     return str;
 }
-
-
 /*****************************************************************/
 
-int main(void)
-{   
-    int n=0;
 
-    // 使用in.txt 重定向 到输入
-    freopen("in.txt","r",stdin);
-    cin>>n;
-
-    
-    cout<<n<<endl;
-
-    return 0;
-}
+int main

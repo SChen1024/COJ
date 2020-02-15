@@ -47,7 +47,15 @@
 			"optional": "cpp",
 			"sstream": "cpp",
 			"string_view": "cpp",
-			"tuple": "cpp"
+			"tuple": "cpp",
+			"bitset": "cpp",
+			"regex": "cpp",
+			"valarray": "cpp",
+			"memory": "cpp",
+			"complex": "cpp",
+			"queue": "cpp",
+			"fcntl.h": "c",
+			"io.h": "c"
 		},
 	// 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
 	"code-runner.runInTerminal": true,
@@ -71,6 +79,12 @@
 	// 在运行代码之前保存文件
 	"code-runner.saveFileBeforeRun": true,
 	"code-runner.clearPreviousOutput": true,
+	"latex-workshop.view.pdf.external.viewer.command": "F:/Code/Latex/PDF/SumatraPDF.exe",
+	"latex-workshop.view.pdf.external.viewer.args": [
+		"-inverse-search",
+		"\"C:/Program Files/Microsoft VS Code/code.exe\" -g \"%f:%l\"",
+		"%PDF%"
+	],
 
 	},
 	"folders": [
@@ -78,7 +92,19 @@
 			"path": "."
 		},
 		{
-			"path": "D:\\Code\\Vision\\xxCamera"
+			"path": "D:\\Code\\Project\\OpenCV_doc"
+		},
+		{
+			"path": "D:\\Code\\Vision\\Camera\\Project\\CBoreHole"
+		},
+		{
+			"path": "D:\\Code\\Web\\Blog\\SChen00"
+		},
+		{
+			"path": "D:\\Data\\Project"
+		},
+		{
+			"path": "D:\\Code\\Latex"
 		}
 	],
 

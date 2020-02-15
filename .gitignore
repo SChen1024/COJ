@@ -249,6 +249,12 @@ LL/cmake-build-debug/
 *.exe 
 NowCoder/Offer/CodingInterviewChinese2/*
 NowCoder/CodingInterviews/*
+NowCoder/CodeInterview/*
 
 NowCoder/Offer/CodingInterviews/*
 NowCoder/Porject/code1/
+NowCoder/CodeInterview/Offer/CodingInterviewChinese2/
+*.exe
+
+NowCoder/CodingInterviews
+.tmp.drivedownload/
