@@ -22,15 +22,14 @@ public:
         ListNode *fast = head,*slow = head;
 
         while(fast && fast->next) {
-            if(fast == slow)    return true;
+            
             // 一个一步, 一个两步 最终相遇
             slow = slow->next;
             fast = fast->next->next;
-        }
-        return fast == nullptr?false:true;
+            if(fast == slow)    return true;
 
-        
-        
+        }
+        return false;
     }
 };
 // @lc code=end
